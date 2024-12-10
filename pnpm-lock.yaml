@@ -67,8 +67,8 @@ importers:
         specifier: 14.0.1
         version: 14.0.1
       '@types/node':
-        specifier: ts5.1
-        version: 20.8.7
+        specifier: ts5.4
+        version: 20.12.7
       '@types/node-fetch':
         specifier: 2.6.11
         version: 2.6.11
@@ -116,7 +116,7 @@ importers:
         version: 7.34.1(eslint@8.57.0)
       knip:
         specifier: 5.11.0
-        version: 5.11.0(@types/node@20.8.7)(typescript@5.4.5)
+        version: 5.11.0(@types/node@20.12.7)(typescript@5.4.5)
       node-fetch:
         specifier: 3.3.2
         version: 3.3.2
@@ -132,6 +132,9 @@ importers:
       prettier:
         specifier: 3.2.5
         version: 3.2.5
+      raw-loader:
+        specifier: '*'
+        version: 4.0.2(webpack@5.91.0(@swc/core@1.5.0)(esbuild@0.19.10)(webpack-cli@4.10.0))
       read-excel-file:
         specifier: 5.7.1
         version: 5.7.1
@@ -140,7 +143,7 @@ importers:
         version: 3.0.2
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@swc/core@1.5.0)(@types/node@20.8.7)(typescript@5.4.5)
+        version: 10.9.2(@swc/core@1.5.0)(@types/node@20.12.7)(typescript@5.4.5)
       tslib:
         specifier: 2.6.2
         version: 2.6.2
@@ -1053,9 +1056,6 @@ packages:
 
   '@types/node@20.5.1':
     resolution: {integrity: sha512-4tT2UrL5LBqDwoed9wZ6N3umC4Yhz3W3FloMmiiG4JwmUJWpie0c7lcnUNd4gtMKuDEO4wRVS8B6Xa0uMRsMKg==}
-
-  '@types/node@20.8.7':
-    resolution: {integrity: sha512-21TKHHh3eUHIi2MloeptJWALuCu5H7HQTdTrWIFReA8ad+aggoX+lRes3ex7/FtpC+sVUpFMQ+QTfYr74mruiQ==}
 
   '@types/normalize-package-data@2.4.3':
     resolution: {integrity: sha512-ehPtgRgaULsFG8x0NeYJvmyH1hmlfsNLujHe9dQEia/7MAJYdzMSi19JtchUHjmBA6XC/75dK55mzZH+RyieSg==}
@@ -4681,6 +4681,12 @@ packages:
     resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
     engines: {node: '>= 0.8'}
 
+  raw-loader@4.0.2:
+    resolution: {integrity: sha512-ZnScIV3ag9A4wPX/ZayxL/jZH+euYb6FcUinPcgiQW0+UBtEv0O6Q3lGd3cqJ+GHH+rksEv3Pj99oxJ3u3VIKA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+
   rc-config-loader@4.1.3:
     resolution: {integrity: sha512-kD7FqML7l800i6pS6pvLyIE2ncbk9Du8Q0gp/4hMPhJU6ZxApkoLcGD8ZeqgiAlfwZ6BlETq6qqe+12DUL207w==}
 
@@ -5493,9 +5499,6 @@ packages:
 
   unconfig@0.3.13:
     resolution: {integrity: sha512-N9Ph5NC4+sqtcOjPfHrRcHekBCadCXWTBzp2VYYbySOHW0PfD9XLCeXshTXjkPYwLrBr9AtSeU0CZmkYECJhng==}
-
-  undici-types@5.25.3:
-    resolution: {integrity: sha512-Ga1jfYwRn7+cP9v8auvEXN1rX3sWqlayd4HP7OKk4mZWylEmu3KzXDUGrQUN6Ol7qo1gPvB2e5gX6udnyEPgdA==}
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
@@ -6830,10 +6833,6 @@ snapshots:
       undici-types: 5.26.5
 
   '@types/node@20.5.1': {}
-
-  '@types/node@20.8.7':
-    dependencies:
-      undici-types: 5.25.3
 
   '@types/normalize-package-data@2.4.3': {}
 
@@ -9805,12 +9804,12 @@ snapshots:
 
   klona@2.0.6: {}
 
-  knip@5.11.0(@types/node@20.8.7)(typescript@5.4.5):
+  knip@5.11.0(@types/node@20.12.7)(typescript@5.4.5):
     dependencies:
       '@ericcornelissen/bash-parser': 0.5.2
       '@nodelib/fs.walk': 2.0.0
       '@snyk/github-codeowners': 1.1.0
-      '@types/node': 20.8.7
+      '@types/node': 20.12.7
       easy-table: 1.2.0
       fast-glob: 3.3.2
       file-entry-cache: 8.0.0
@@ -11031,6 +11030,12 @@ snapshots:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
 
+  raw-loader@4.0.2(webpack@5.91.0(@swc/core@1.5.0)(esbuild@0.19.10)(webpack-cli@4.10.0)):
+    dependencies:
+      loader-utils: 2.0.4
+      schema-utils: 3.3.0
+      webpack: 5.91.0(@swc/core@1.5.0)(esbuild@0.19.10)(webpack-cli@4.10.0)
+
   rc-config-loader@4.1.3:
     dependencies:
       debug: 4.3.4
@@ -11818,14 +11823,14 @@ snapshots:
     dependencies:
       typescript: 5.4.5
 
-  ts-node@10.9.2(@swc/core@1.5.0)(@types/node@20.5.1)(typescript@5.4.5):
+  ts-node@10.9.2(@swc/core@1.5.0)(@types/node@20.12.7)(typescript@5.4.5):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.9
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.5.1
+      '@types/node': 20.12.7
       acorn: 8.11.3
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -11838,14 +11843,14 @@ snapshots:
     optionalDependencies:
       '@swc/core': 1.5.0
 
-  ts-node@10.9.2(@swc/core@1.5.0)(@types/node@20.8.7)(typescript@5.4.5):
+  ts-node@10.9.2(@swc/core@1.5.0)(@types/node@20.5.1)(typescript@5.4.5):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.9
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.8.7
+      '@types/node': 20.5.1
       acorn: 8.11.3
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -11945,8 +11950,6 @@ snapshots:
       '@antfu/utils': 0.7.7
       defu: 6.1.4
       jiti: 1.21.0
-
-  undici-types@5.25.3: {}
 
   undici-types@5.26.5: {}
 
